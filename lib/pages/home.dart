@@ -9,7 +9,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.grey[350],
+      backgroundColor: Colors.grey[350],
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.grey[900],
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Text(
+              Text(
                 "Noble",
                 style: TextStyle(
                   fontSize: 23.0,
@@ -27,10 +27,9 @@ class _HomeState extends State<Home> {
                   fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.normal,
                   color: Colors.grey[400],
-
                 ),
               ),
-              new Text(
+              Text(
                 "RED",
                 style: TextStyle(
                   fontSize: 24.0,
@@ -38,7 +37,6 @@ class _HomeState extends State<Home> {
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.bold,
                   color: Colors.red[500],
-
                 ),
               )
             ],
@@ -46,6 +44,5 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
-  
   }
 }
