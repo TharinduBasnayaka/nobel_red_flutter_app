@@ -12,33 +12,18 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.grey[350],
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.red[900],
         title: Center(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "Noble",
-                style: TextStyle(
-                  fontSize: 23.0,
-                  fontFamily: 'DMSans',
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.normal,
-                  color: Colors.grey[400],
-                ),
-              ),
-              Text(
-                "RED",
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontFamily: 'DMSans',
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red[500],
-                ),
-              )
+              // IconButton(
+              //   onPressed: () {},
+              //   icon: Icon(Icons.arrow_back),
+              // ),
+              Text('HOME')
             ],
           ),
         ),
