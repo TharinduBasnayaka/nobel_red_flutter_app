@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nobel_red/Widgets/form_field.dart';
-import 'package:nobel_red/Widgets/custom_icons_icons.dart';
+//import 'package:nobel_red/Widgets/custom_icons_icons.dart';
+import 'package:nobel_red/Widgets/f_g_t_icons_icons.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -18,14 +19,17 @@ class _LoginState extends State<Login> {
           title: Center(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              // mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.values[0],
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 IconButton(
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/');
                   },
                   icon: Icon(Icons.arrow_back),
+                ),
+                SizedBox(
+                  width: 5.0,
                 ),
                 Text(
                   'LogIn to NobleRed',
@@ -102,7 +106,7 @@ class _LoginState extends State<Login> {
                 onPressed: () {},
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
-                icon: Icon(CustomIcons.facebook_app_symbol),
+                icon: Icon(FGTIcons.facebook_app_symbol),
                 label: (Text('LOGIN WITH FACEBOOK')),
                 textColor: Colors.grey[650],
                 splashColor: Colors.red[400],
@@ -116,7 +120,7 @@ class _LoginState extends State<Login> {
                 onPressed: () {},
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
-                icon: Icon(CustomIcons.search),
+                icon: Icon(FGTIcons.search),
                 label: (Text('   LOGIN WITH GOOGLE   ')),
                 textColor: Colors.grey[650],
                 splashColor: Colors.red[400],
@@ -129,7 +133,7 @@ class _LoginState extends State<Login> {
                 onPressed: () {},
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
-                icon: Icon(CustomIcons.twitter__1_),
+                icon: Icon(FGTIcons.twitter__1_),
                 label: Text('  LOGIN WITH TWITTER  '),
                 textColor: Colors.grey[650],
                 splashColor: Colors.red[400],
