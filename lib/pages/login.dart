@@ -45,6 +45,8 @@ class _LoginState extends State<Login> {
         ),
         body: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(
                 height: 10,
@@ -80,6 +82,7 @@ class _LoginState extends State<Login> {
                 height: 20,
               ),
               //Login button
+
               RaisedButton(
                 onPressed: () {
                   Navigator.pushReplacementNamed(
@@ -96,11 +99,23 @@ class _LoginState extends State<Login> {
                 hoverElevation: 20,
               ),
 
-              Container(
-                height: 1.0,
+              Divider(
+                height: 5.0,
                 color: Colors.grey[600],
+                thickness: 1.0,
               ),
-              SizedBox(height: 20.0),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                "OR",
+                style: TextStyle(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10.0),
+
               // facebook login button
               RaisedButton.icon(
                 onPressed: () {},

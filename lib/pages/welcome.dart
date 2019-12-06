@@ -8,42 +8,36 @@ class Welcome extends StatefulWidget {
 class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.white,
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-           
-            SizedBox(height: 200.0),
+            // SizedBox(height: 200.0),
             Image(
               image: AssetImage('assets/logo.png'),
+              // fit: BoxFit.cover,
             ),
-        
-            SizedBox(height: 120.0),
-           // Get started button for the home page
+
+            SizedBox(height: 100.0),
+            // Get started button for the home page
             RaisedButton(
-              color: Colors.grey[600],
+              color: Colors.grey[800],
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20)
-                ),
-              onPressed: (){
+                  borderRadius: BorderRadius.circular(20)),
+              onPressed: () {
                 Navigator.pushReplacementNamed(context, '/login');
               },
-
-              child:Text(
+              child: Text(
                 'Get Started',
                 style: TextStyle(
-                     color: Colors.white,
-                     fontSize: 18.0,
-                     
-                   ),
+                  color: Colors.white,
+                  fontSize: 18.0,
+                ),
               ),
             )
-          
-           
           ],
         ),
       ),
