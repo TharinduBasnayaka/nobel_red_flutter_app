@@ -16,9 +16,12 @@ class _WelcomeState extends State<Welcome> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // SizedBox(height: 200.0),
-            Image(
-              image: AssetImage('assets/logo.png'),
-              // fit: BoxFit.cover,
+            Center(
+              child: Image(
+                width: 300.0,
+                image: AssetImage('assets/logo.png'),
+                // fit: BoxFit.cover,
+              ),
             ),
 
             SizedBox(height: 100.0),

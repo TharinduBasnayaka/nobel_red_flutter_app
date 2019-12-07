@@ -117,7 +117,9 @@ class _LoginState extends State<Login> {
 
               // facebook login button
               RaisedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/loginFacebook');
+                },
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
                 icon: Icon(FGTIcons.facebook_app_symbol),
@@ -131,7 +133,9 @@ class _LoginState extends State<Login> {
               ),
               //login with google button
               RaisedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/loginGoogle');
+                },
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
                 icon: Icon(FGTIcons.search),
@@ -144,7 +148,9 @@ class _LoginState extends State<Login> {
               ),
               //login with twitter button
               RaisedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/loginTwitter');
+                },
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
                 icon: Icon(FGTIcons.twitter__1_),
