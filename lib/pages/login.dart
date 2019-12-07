@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nobel_red/Widgets/form_field.dart';
-//import 'package:nobel_red/Widgets/custom_icons_icons.dart';
 import 'package:nobel_red/Widgets/f_g_t_icons_icons.dart';
 
 class Login extends StatefulWidget {
