@@ -12,7 +12,15 @@ class _PostsState extends State<Posts> {
       appBar: AppBar(
         title: Center(
           child: Row(
-            children: <Widget>[Text('Posts')],
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
+              ),
+              Text('Posts'),
+            ],
           ),
         ),
       ),

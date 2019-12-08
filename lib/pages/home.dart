@@ -65,14 +65,17 @@ class _HomeState extends State<Home> {
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   SizedBox(
-                    height: 200.0,
+                    height: 200.0, //there is problem in this option
                     width: 360.0,
+                    //width doesn't change according to the device.it has to be fix
                     child: Carousel(
                       images: [
                         ExactAssetImage('assets/header-image-1.jpg'),
@@ -93,18 +96,18 @@ class _HomeState extends State<Home> {
           ],
         ));
   }
-}
 
-void choiceAction(String choice) {
-  //this is for the tasks doing from the
-  if (choice == Constants.posts) {
-    BuildContext context;
-    Navigator.pushReplacementNamed(context, '/posts');
-  } else if (choice == Constants.campaigns) {
-    print('campaigns');
-  } else if (choice == Constants.settings) {
-    print('settings');
-  } else {
-    print("signout");
+  void choiceAction(String choice) {
+    // BuildContext context = Map(choice);
+    //this is for the tasks doing from the popup menu & it's still developing
+    if (choice == Constants.posts) {
+      Navigator.pushReplacementNamed(context, '/posts');
+    } else if (choice == Constants.campaigns) {
+      Navigator.pushReplacementNamed(context, '/campaigns');
+    } else if (choice == Constants.settings) {
+      Navigator.pushReplacementNamed(context, '/posts');
+    } else {
+      Navigator.pushReplacementNamed(context, '/posts');
+    }
   }
 }

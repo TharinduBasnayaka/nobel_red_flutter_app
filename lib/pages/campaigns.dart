@@ -8,6 +8,28 @@ class Campaigns extends StatefulWidget {
 class _CampaignsState extends State<Campaigns> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Row(
+            children: <Widget>[
+              IconButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
+                icon: Icon(Icons.arrow_back),
+              ),
+              Text(
+                'Campaigns',
+                style: TextStyle(
+                    fontFamily: 'DMSans',
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.normal),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
