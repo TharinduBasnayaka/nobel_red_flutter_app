@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "189628493533",
+    "firebase_url": "https://noble-red-9d387.firebaseio.com",
+    "project_id": "noble-red-9d387",
+    "storage_bucket": "noble-red-9d387.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189628493533:android:a785dd37a52468c2157534",
+        "android_client_info": {
+          "package_name": "com.example.nobel_red"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189628493533-6jk6j138l1c46nchl9lq1ubo5vdns2rb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nobel_red",
+            "certificate_hash": "3efe90a4bdaded7a1f04c8ac694dce1b4e0bafb8"
+          }
+        },
+        {
+          "client_id": "189628493533-r23citt7k8mufmbk82k45ii5mfs613qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw2M4_A8qbRNvyxvlPLqQgYZLjPxB3rFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189628493533-r23citt7k8mufmbk82k45ii5mfs613qk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

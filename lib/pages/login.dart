@@ -11,7 +11,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.white,
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.red[700],
@@ -96,6 +96,7 @@ class _LoginState extends State<Login> {
                 highlightColor: Colors.red[400],
                 highlightElevation: 10.0,
                 hoverElevation: 20,
+                elevation: 10.0,
               ),
 
               Divider(

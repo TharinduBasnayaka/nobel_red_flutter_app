@@ -11,7 +11,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[350],
+        backgroundColor: Colors.white,
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.red[900],
@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   SizedBox(
                     height: 200.0, //there is problem in this option
-                    width: 360.0,
+                    width: MediaQuery.of(context).size.width,
                     //width doesn't change according to the device.it has to be fix
                     child: Carousel(
                       images: [
@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
     } else if (choice == Constants.settings) {
       Navigator.pushReplacementNamed(context, '/posts');
     } else {
-      Navigator.pushReplacementNamed(context, '/posts');
+      Navigator.pushReplacementNamed(context, '/login');
     }
   }
 }

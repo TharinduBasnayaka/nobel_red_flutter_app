@@ -9,9 +9,9 @@ class _LoginWithFacebookState extends State<LoginWithFacebook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.red[700],
+        backgroundColor: Colors.red[900],
         title: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
