@@ -37,15 +37,22 @@ class _CampaignsState extends State<Campaigns> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            SizedBox(
-              height: 400.0,
-              width: MediaQuery.of(context).size.width,
-              child: Text(
-                "Campaign posts here",
-                style: TextStyle(
-                  fontFamily: "DMSans",
-                  fontSize: 50.0,
-                ),
+            // SizedBox(
+            //   height: 400.0,
+            //   width: MediaQuery.of(context).size.width,
+            //   child: Text(
+            //     "Campaign posts here",
+            //     style: TextStyle(
+            //       fontFamily: "DMSans",
+            //       fontSize: 50.0,
+            //     ),
+            //   ),
+            // ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0),
+              child: ListBody(
+                mainAxis: Axis.vertical,
+                children: <Widget>[Text("campaign posts here")],
               ),
             ),
             FloatingActionButton(
