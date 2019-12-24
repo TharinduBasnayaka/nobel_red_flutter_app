@@ -42,7 +42,7 @@ class _CampaignsState extends State<Campaigns> {
             //   width: MediaQuery.of(context).size.width,
             //   child: Text(
             //     "Campaign posts here",
-            //     style: TextStyle(
+            //     style: TextStyle(`
             //       fontFamily: "DMSans",
             //       fontSize: 50.0,
             //     ),
