@@ -29,41 +29,24 @@ class _PostsState extends State<Posts> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            SizedBox(
-              height: 400.0,
-              width: MediaQuery.of(context).size.width,
-              child: Text(
-                'blood request posts here',
-                style: TextStyle(
-                  fontSize: 45.0,
-                  fontFamily: 'DMSans',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 45.0,
-            ),
-
-            // button for adding new campaigns
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/addbloodrequests');
-              },
-              child: Icon(
-                Icons.add,
-                color: Colors.white,
-                semanticLabel: "New campaign",
-                size: 38.0,
-              ),
-              backgroundColor: Colors.red[900],
-            )
-          ],
+          child: Card(
+        color: Colors.grey,
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image:NetworkImage(
+                    "https://firebasestorage.googleapis.com/v0/b/noble-red-9d387.appspot.com/o/website_graphics%2Fblood_needed_posts%2Fblood%20needed%20A%2B.jpg?alt=media&token=efe377c0-fa5c-4047-a130-3d601384a336"
+                      
         ),
-      ),
-    );
+      )
+          // new ListView.builder(
+          //   padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
+
+          // )
+
+          ),
+    ))
+      )
+      );
   }
 }
