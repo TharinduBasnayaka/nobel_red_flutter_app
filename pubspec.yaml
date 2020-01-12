@@ -25,7 +25,6 @@ dependencies:
   cupertino_icons: ^0.1.2
   carousel_pro: ^1.0.0
   cloud_firestore: any
-  #firebase: ^7.1.0
   firebase_auth: any
 
 dev_dependencies:
