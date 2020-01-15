@@ -16,14 +16,6 @@ class _AddBloodRequestsState extends State<AddBloodRequests> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                ),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/posts');
-                },
-              ),
               Text(
                 'New Blood Request Form',
                 style: TextStyle(

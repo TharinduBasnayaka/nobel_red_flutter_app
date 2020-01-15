@@ -11,6 +11,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.white,
         appBar: AppBar(
           automaticallyImplyLeading: false,
@@ -117,16 +118,20 @@ class _LoginState extends State<Login> {
               SizedBox(height: 10.0),
 
               // facebook login button
-              RaisedButton.icon(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/loginFacebook');
-                },
-                highlightColor: Colors.red[400],
-                highlightElevation: 10.0,
-                icon: Icon(FGTIcons.facebook_app_symbol),
-                label: (Text('LOGIN WITH FACEBOOK')),
-                textColor: Colors.grey[650],
-                splashColor: Colors.red[400],
+              ButtonTheme(
+                minWidth: 300,
+                buttonColor: Colors.grey,
+                child: RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/loginFacebook');
+                  },
+                  highlightColor: Colors.red[400],
+                  highlightElevation: 10.0,
+                  icon: Icon(FGTIcons.facebook_app_symbol),
+                  label: (Text('LOGIN WITH FACEBOOK')),
+                  textColor: Colors.grey[650],
+                  splashColor: Colors.red[400],
+                ),
               ),
 
               SizedBox(

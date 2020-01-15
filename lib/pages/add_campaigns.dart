@@ -15,14 +15,8 @@ class _AddcampaignsState extends State<Addcampaigns> {
           title: Center(
             child: Row(
               children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, "/campaigns");
-                  },
-                ),
                 Text(
-                  'New Campaigns',
+                  'Add New Campaign',
                   style: TextStyle(
                     fontFamily: "DMsans",
                     fontSize: 18.0,
