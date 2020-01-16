@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nobel_red/Widgets/form_field.dart';
 
 class AddBloodRequests extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class _AddBloodRequestsState extends State<AddBloodRequests> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.red[900],
@@ -31,11 +33,63 @@ class _AddBloodRequestsState extends State<AddBloodRequests> {
       ),
       body: Center(
         child: Column(
+          //Add new blood need request
           children: <Widget>[
-            Text(
-              "blood requset form here",
-              style: TextStyle(fontSize: 50.0),
+            SizedBox(
+              height: 10,
             ),
+            LabelTextField(
+              hintText: "User ID",
+              labelText: "User ID",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            LabelTextField(
+              hintText: "User Name",
+              labelText: "User Name",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            LabelTextField(
+              hintText: "Address",
+              labelText: "Address",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            LabelTextField(
+              hintText: "Contact No",
+              labelText: "Contact No",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            LabelTextField(
+              hintText: "Blood Type",
+              labelText: "Blood Type",
+            ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  RaisedButton(
+                    color: Colors.grey[800],
+                    onPressed: () {},
+                    child:
+                        Text("Submit", style: TextStyle(color: Colors.white)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                  ),
+                  RaisedButton(
+                    onPressed: () {},
+                    color: Colors.grey[800],
+                    child: Text("Reset", style: TextStyle(color: Colors.white)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                  )
+                ])
           ],
         ),
       ),

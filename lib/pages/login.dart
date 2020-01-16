@@ -120,7 +120,7 @@ class _LoginState extends State<Login> {
               // facebook login button
               ButtonTheme(
                 minWidth: 300,
-                buttonColor: Colors.grey,
+                buttonColor: Colors.grey[300],
                 child: RaisedButton.icon(
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/loginFacebook');
@@ -137,32 +137,42 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 10,
               ),
+
               //login with google button
-              RaisedButton.icon(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/loginGoogle');
-                },
-                highlightColor: Colors.red[400],
-                highlightElevation: 10.0,
-                icon: Icon(FGTIcons.search),
-                label: (Text('   LOGIN WITH GOOGLE   ')),
-                textColor: Colors.grey[650],
-                splashColor: Colors.red[400],
-              ),
+              ButtonTheme(
+                  minWidth: 300,
+                  buttonColor: Colors.grey[300],
+                  child: RaisedButton.icon(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/loginGoogle');
+                    },
+                    highlightColor: Colors.red[400],
+                    highlightElevation: 10.0,
+                    icon: Icon(FGTIcons.search),
+                    label: (Text('   LOGIN WITH GOOGLE   ')),
+                    textColor: Colors.grey[650],
+                    splashColor: Colors.red[400],
+                  )),
+
               SizedBox(
                 height: 10.0,
               ),
+
               //login with twitter button
-              RaisedButton.icon(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/loginTwitter');
-                },
-                highlightColor: Colors.red[400],
-                highlightElevation: 10.0,
-                icon: Icon(FGTIcons.twitter__1_),
-                label: Text('  LOGIN WITH TWITTER  '),
-                textColor: Colors.grey[650],
-                splashColor: Colors.red[400],
+              ButtonTheme(
+                minWidth: 300,
+                buttonColor: Colors.grey[300],
+                child: RaisedButton.icon(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/loginTwitter');
+                  },
+                  highlightColor: Colors.red[400],
+                  highlightElevation: 10.0,
+                  icon: Icon(FGTIcons.twitter__1_),
+                  label: Text('  LOGIN WITH TWITTER  '),
+                  textColor: Colors.grey[650],
+                  splashColor: Colors.red[400],
+                ),
               )
             ],
           ),

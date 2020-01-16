@@ -28,17 +28,6 @@ class _PostsState extends State<Posts> {
         title: Center(
           child: Row(
             children: <Widget>[
-              // IconButton(
-              //   color: Colors.black,
-              //   icon: Icon(
-              //     Icons.arrow_back,
-              //     color: Colors.white,
-              //     size: 30.0,
-              //   ),
-              //   onPressed: () {
-              //     Navigator.pushReplacementNamed(context, '/home');
-              //   },
-              // ),
               Text('Posts'),
             ],
           ),
@@ -62,7 +51,7 @@ class _PostsCardsPageState extends State<PostsCardsPage> {
         .document("blood_needed_posts")
         .collection("blood_needed_posts")
         .getDocuments();
-    print(snapshots.documents.length);
+    // print(snapshots.documents.length);
     return snapshots.documents;
   }
 
@@ -97,9 +86,10 @@ class _PostsCardsPageState extends State<PostsCardsPage> {
                         child: Row(children: <Widget>[
                           Container(
                             padding:
-                                EdgeInsets.fromLTRB(40.0, 40.0, 65.0, 40.0),
+                                EdgeInsets.fromLTRB(45.0, 38.0, 70.0, 38.0),
                             decoration: BoxDecoration(
                                 shape: BoxShape.values[0],
+                                borderRadius: BorderRadius.circular(20),
                                 image: DecorationImage(
                                     fit: BoxFit.fill,
                                     image: NetworkImage(
@@ -107,7 +97,7 @@ class _PostsCardsPageState extends State<PostsCardsPage> {
                                     ))),
                           ),
                           SizedBox(
-                            width: 20,
+                            width: 10,
                           ),
                           Expanded(
                             child: Text(

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:nobel_red/pages/add_campaigns.dart';
-import 'home.dart';
+// import 'home.dart';
 
 class Campaigns extends StatefulWidget {
   @override
@@ -28,13 +28,6 @@ class _CampaignsState extends State<Campaigns> {
         title: Center(
           child: Row(
             children: <Widget>[
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
-                },
-                icon: Icon(Icons.arrow_back),
-              ),
               Text(
                 'Campaigns',
                 style: TextStyle(
@@ -51,12 +44,14 @@ class _CampaignsState extends State<Campaigns> {
   }
 }
 
+//widget for getting firebase data as cards
 class CampaignCardsPage extends StatefulWidget {
   @override
   _CampaignCardsPageState createState() => _CampaignCardsPageState();
 }
 
 class _CampaignCardsPageState extends State<CampaignCardsPage> {
+  //firebase get function to retrive data
   Future getCampaignPosts() async {
     var firestore = Firestore.instance;
     QuerySnapshot qn = await firestore
@@ -65,12 +60,12 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
         .collection('campaign_posts')
         .getDocuments();
 
-    return qn.documents;
+    return qn.documents; //put data into a array
   }
 
   @override
   void initState() {
-    this.getCampaignPosts();
+    this.getCampaignPosts(); //initializing the state
     super.initState();
   }
 
@@ -81,6 +76,7 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
             future: getCampaignPosts(),
             builder: (_, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
+                //if firebase connection is not working
                 return Container(
                   child: Center(
                     child: Text("Loading......"),
@@ -88,6 +84,7 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                 );
               } else {
                 return ListView.builder(
+                    //show data as  list
                     itemCount: snapshot.data.length,
                     itemBuilder: (_, index) {
                       return Container(
@@ -100,11 +97,13 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                               child: Row(children: <Widget>[
                                 Container(
                                   padding: EdgeInsets.fromLTRB(
-                                      40.0, 40.0, 65.0, 40.0),
+                                      40.0, 40.0, 70.0, 40.0),
                                   decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
                                       image: DecorationImage(
                                           fit: BoxFit.fill,
                                           image: NetworkImage(
+                                            //getting the firebase image to display in the card
                                             snapshot.data[index]["imgSrc"],
                                           ))),
                                 ),

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:nobel_red/Widgets/Constants.dart';
 
+import 'Posts.dart';
+import 'campaigns.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -98,12 +101,12 @@ class _HomeState extends State<Home> {
   }
 
   void choiceAction(String choice) {
-    // BuildContext context = Map(choice);
     //this is for the tasks doing from the popup menu & it's still developing
     if (choice == Constants.posts) {
-      Navigator.pushReplacementNamed(context, '/posts');
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Posts()));
     } else if (choice == Constants.campaigns) {
-      Navigator.pushReplacementNamed(context, '/campaigns');
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Campaigns()));
     } else if (choice == Constants.settings) {
       Navigator.pushReplacementNamed(context, '/posts');
     } else {
