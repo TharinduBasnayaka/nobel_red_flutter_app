@@ -71,16 +71,21 @@ class _AddBloodRequestsState extends State<AddBloodRequests> {
               labelText: "Blood Type",
             ),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  RaisedButton(
-                    color: Colors.grey[800],
-                    onPressed: () {},
-                    child:
-                        Text("Submit", style: TextStyle(color: Colors.white)),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                  ButtonTheme(
+                    child: RaisedButton(
+                      color: Colors.grey[800],
+                      onPressed: () {},
+                      child:
+                          Text("Submit", style: TextStyle(color: Colors.white)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
                   ),
                   RaisedButton(
                     onPressed: () {},
