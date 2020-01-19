@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:nobel_red/pages/add_campaigns.dart';
-// import 'home.dart';
+import 'package:nobel_red/Widgets/Detail_page.dart';
 
 class Campaigns extends StatefulWidget {
   @override
@@ -69,6 +69,15 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
     super.initState();
   }
 
+  navigateToDetailPage(DocumentSnapshot campaign) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => DetailPage(
+                  campaign: campaign,
+                )));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,8 +88,15 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                 //if firebase connection is not working
                 return Container(
                   child: Center(
-                    child: Text("Loading......"),
-                  ),
+                      // child: Text("Loading......"),
+                      child: CircularProgressIndicator(
+                    value: 50.0,
+                    valueColor:
+                        new AlwaysStoppedAnimation<Color>(Colors.red[800]),
+                    // semanticsLabel: "Loading",
+                    // semanticsValue: "Loading",
+                    strokeWidth: 6.0,
+                  )),
                 );
               } else {
                 return ListView.builder(
@@ -90,33 +106,38 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                       return Container(
                           height: 150,
                           width: 100,
-                          child: Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
-                              elevation: 10.0,
-                              child: Row(children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(
-                                      40.0, 40.0, 70.0, 40.0),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                            //getting the firebase image to display in the card
-                                            snapshot.data[index]["imgSrc"],
-                                          ))),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Expanded(
-                                  child: Text(
-                                      "A Blood Donation Campaign organized by  ${snapshot.data[index]["organizerName"]} will be held on ${snapshot.data[index]["date"]} at  ${snapshot.data[index]["address"]} from ${snapshot.data[index]["time"]} onwards",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                )
-                              ])));
+                          child: InkWell(
+                            onTap: () {
+                              navigateToDetailPage(snapshot.data[index]);
+                            },
+                            child: Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                elevation: 10.0,
+                                child: Row(children: <Widget>[
+                                  Container(
+                                    padding: EdgeInsets.fromLTRB(
+                                        40.0, 40.0, 70.0, 40.0),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        image: DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: NetworkImage(
+                                              //getting the firebase image to display in the card
+                                              snapshot.data[index]["imgSrc"],
+                                            ))),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                        "A Blood Donation Campaign organized by  ${snapshot.data[index]["organizerName"]} will be held on ${snapshot.data[index]["date"]} at  ${snapshot.data[index]["address"]} from ${snapshot.data[index]["time"]} onwards",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                ])),
+                          ));
                     });
               }
             }));

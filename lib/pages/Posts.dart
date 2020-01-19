@@ -70,7 +70,11 @@ class _PostsCardsPageState extends State<PostsCardsPage> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Container(
                 child: Center(
-              child: Text("Loading......"),
+              //  child: Text("Loading......"),
+              child: CircularProgressIndicator(
+                value: 50.0,
+                valueColor: new AlwaysStoppedAnimation<Color>(Colors.red[800]),
+              ),
             ));
           } else {
             return ListView.builder(
