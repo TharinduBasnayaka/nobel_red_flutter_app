@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:nobel_red/Widgets/map.dart';
 import 'dart:async';
 import 'package:nobel_red/pages/add_campaigns.dart';
 import 'package:nobel_red/Widgets/Detail_page.dart';
@@ -69,6 +70,7 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
     super.initState();
   }
 
+//Function for go to campaign details page
   navigateToDetailPage(DocumentSnapshot campaign) {
     Navigator.push(
         context,
@@ -99,6 +101,7 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                   )),
                 );
               } else {
+                //for working firebase connection
                 return ListView.builder(
                     //show data as  list
                     itemCount: snapshot.data.length,
@@ -109,6 +112,10 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                           child: InkWell(
                             onTap: () {
                               navigateToDetailPage(snapshot.data[index]);
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => GoogleMapView()));
                             },
                             child: Card(
                                 shape: RoundedRectangleBorder(
