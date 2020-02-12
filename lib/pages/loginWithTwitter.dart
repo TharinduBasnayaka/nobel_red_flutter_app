@@ -16,11 +16,11 @@ class _LoginWithTwitterState extends State<LoginWithTwitter> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/login');
-                  },
-                  icon: Icon(Icons.arrow_back)),
+              // IconButton(
+              //     onPressed: () {
+              //       Navigator.pushReplacementNamed(context, '/login');
+              //     },
+              //     icon: Icon(Icons.arrow_back)),
               Text(
                 'Register with Twitter',
                 style: TextStyle(

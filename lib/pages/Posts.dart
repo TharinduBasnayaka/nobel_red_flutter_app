@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
+import 'package:loading/loading.dart';
 import 'dart:async';
 
 import 'package:nobel_red/pages/add_bloodRequsets.dart';
@@ -70,12 +72,11 @@ class _PostsCardsPageState extends State<PostsCardsPage> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Container(
                 child: Center(
-              //  child: Text("Loading......"),
-              child: CircularProgressIndicator(
-                value: 50.0,
-                valueColor: new AlwaysStoppedAnimation<Color>(Colors.red[800]),
-              ),
-            ));
+                    //  child: Text("Loading......"),
+                    child: Loading(
+                        indicator: BallSpinFadeLoaderIndicator(),
+                        size: 70.0,
+                        color: Colors.red[800])));
           } else {
             return ListView.builder(
               itemCount: snapshot.data.length,

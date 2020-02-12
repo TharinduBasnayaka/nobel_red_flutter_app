@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:nobel_red/Widgets/Constants.dart';
@@ -7,6 +8,8 @@ import 'campaigns.dart';
 
 class Home extends StatefulWidget {
   @override
+  final FirebaseUser user;
+  Home({this.user});
   _HomeState createState() => _HomeState();
 }
 

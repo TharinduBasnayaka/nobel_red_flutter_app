@@ -8,7 +8,6 @@ import 'package:nobel_red/pages/loginWithTwitter.dart';
 import 'package:nobel_red/pages/Posts.dart';
 import 'package:nobel_red/pages/campaigns.dart';
 import 'package:nobel_red/pages/add_bloodRequsets.dart';
-import 'package:nobel_red/pages/add_campaigns.dart';
 
 void main() => runApp(MaterialApp(
       initialRoute: '/',
@@ -21,7 +20,6 @@ void main() => runApp(MaterialApp(
         '/loginTwitter': (context) => LoginWithTwitter(),
         '/posts': (context) => Posts(),
         '/campaigns': (context) => Campaigns(),
-        '/addcampaigns': (context) => Addcampaigns(),
         '/addbloodrequests': (context) => AddBloodRequests(),
       },
     ));
