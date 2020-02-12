@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:loading/indicator/ball_spin_fade_loader_indicator.dart';
+import 'package:loading/loading.dart';
 
 import 'dart:async';
-import 'package:nobel_red/pages/add_campaigns.dart';
 import 'package:nobel_red/Widgets/Detail_page.dart';
 
 class Campaigns extends StatefulWidget {
@@ -17,13 +18,13 @@ class _CampaignsState extends State<Campaigns> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Addcampaigns()));
-            },
-          )
+          // IconButton(
+          //   icon: Icon(Icons.add),
+          //   onPressed: () {
+          //     Navigator.push(context,
+          //         MaterialPageRoute(builder: (context) => Addcampaigns()));
+          //   },
+          // )
         ],
         backgroundColor: Colors.red[900],
         title: Center(
@@ -71,14 +72,20 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
   }
 
 //Function for go to campaign details page
-  navigateToDetailPage(DocumentSnapshot campaign) {
-    Navigator.push(
+  Future<void> navigateToDetailPage(DocumentSnapshot campaign) async {
+    await Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => DetailPage(
                   campaign: campaign,
                 )));
   }
+  // navigateToDetailPage(DocumentSnapshot campaign) {
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           builder: (context) => DetailPage(campaign: campaign)));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -90,14 +97,10 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                 //if firebase connection is not working
                 return Container(
                   child: Center(
-                      // child: Text("Loading......"),
-                      child: CircularProgressIndicator(
-                    value: 50.0,
-                    valueColor:
-                        new AlwaysStoppedAnimation<Color>(Colors.red[800]),
-                    // semanticsLabel: "Loading",
-                    // semanticsValue: "Loading",
-                    strokeWidth: 6.0,
+                      child: Loading(
+                    indicator: BallSpinFadeLoaderIndicator(),
+                    size: 70.0,
+                    color: Colors.red[800],
                   )),
                 );
               } else {
@@ -112,11 +115,6 @@ class _CampaignCardsPageState extends State<CampaignCardsPage> {
                           child: InkWell(
                             onTap: () {
                               navigateToDetailPage(snapshot.data[index]);
-
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => GoogleMapView()));
                             },
                             child: Card(
                                 shape: RoundedRectangleBorder(

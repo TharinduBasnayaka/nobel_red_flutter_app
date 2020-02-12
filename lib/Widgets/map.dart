@@ -1,28 +1,37 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapSample extends StatefulWidget {
-  final double lat;
-  final double lng;
-  // final DocumentSnapshot campaign;
-  MapSample({this.lat, this.lng});
+  final DocumentSnapshot campaigndata;
+
+  MapSample({this.campaigndata});
 
   @override
   State<MapSample> createState() => MapSampleState();
 }
 
 class MapSampleState extends State<MapSample> {
+//intializing the variables to get passed  data
   static double latit;
   static double longi;
+  static String address;
+  static String date;
+  static String time;
   @override
   void initState() {
     super.initState();
-    latit = widget.lat;
-    longi = widget.lng;
 
-    print("333333333333333+${widget.lat}");
-    print("333333333333333+${widget.lng}");
+    setState(() {
+      //set data to variables
+      latit = widget.campaigndata.data['lat'];
+      longi = widget.campaigndata.data['lng'];
+      address = widget.campaigndata.data['address'];
+      date = widget.campaigndata.data['date'].toString();
+      time = widget.campaigndata.data['time'].toString();
+      print(address);
+    });
   }
 
   Completer<GoogleMapController> _controller = Completer();
@@ -36,14 +45,15 @@ class MapSampleState extends State<MapSample> {
     });
   }
 
-  static final CameraPosition _default = CameraPosition(
+  final CameraPosition _default = CameraPosition(
     target: LatLng(6.927079, 79.861244),
     zoom: 7,
   );
 
-  static final CameraPosition _campaignPosition = CameraPosition(
+  CameraPosition _campaignPosition = CameraPosition(
       bearing: 19.8334901395799,
-      target: LatLng(latit != null ? latit : 0, longi != null ? longi : 0),
+      target: LatLng(
+          latit != null ? latit : 6.9022, longi != null ? longi : 79.8611),
       tilt: 30,
       zoom: 20);
 
@@ -66,11 +76,11 @@ class MapSampleState extends State<MapSample> {
           child: Align(
               alignment: Alignment.bottomRight,
               child: FloatingActionButton.extended(
+                backgroundColor: Colors.red[800],
                 onPressed: _goToPosition,
                 label: Text('Location'),
                 icon: Icon(
                   Icons.zoom_in,
-                  color: Color.fromRGBO(217, 33, 33, 1.5),
                 ),
               )),
         ),
@@ -87,7 +97,7 @@ class MapSampleState extends State<MapSample> {
     markerId: MarkerId("positionMarker"),
     position:
         LatLng(latit != null ? latit : 6.9022, longi != null ? longi : 79.8611),
-    infoWindow: InfoWindow(title: "this is the title", snippet: "snippet"),
-    icon: BitmapDescriptor.defaultMarker,
+    infoWindow: InfoWindow(title: "$address", snippet: "$date" + " $time"),
+    icon: BitmapDescriptor.defaultMarkerWithHue(10),
   );
 }
