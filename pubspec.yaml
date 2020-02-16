@@ -24,13 +24,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   carousel_pro: ^1.0.0
-  cloud_firestore: any
-  firebase_auth: any
+  cloud_firestore:
+  firebase_auth:
   google_maps_flutter:
   # particles_flutter: ^0.1.2
   loading: ^1.0.2
-
-  # google_maps: ^3.4.1
+  # geolocator: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -69,9 +68,9 @@ flutter:
         - asset: fonts/DMSans-MediumItalic.ttf
         - asset: fonts/DMSans-Regular.ttf
 
-    - family: CustomIcons
+    - family: Qrscanner
       fonts:
-        - asset: fonts/CustomIcons.ttf
+        - asset: fonts/Qrscanner.ttf
     - family: FGTIcons
       fonts:
         - asset: fonts/FGTIcons.ttf

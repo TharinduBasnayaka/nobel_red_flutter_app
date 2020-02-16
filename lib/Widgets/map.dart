@@ -30,7 +30,6 @@ class MapSampleState extends State<MapSample> {
       address = widget.campaigndata.data['address'];
       date = widget.campaigndata.data['date'].toString();
       time = widget.campaigndata.data['time'].toString();
-      print("++++++++++++" + address);
     });
   }
 
